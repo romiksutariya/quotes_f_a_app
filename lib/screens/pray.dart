@@ -27,8 +27,6 @@ class _PrayState extends State<Pray> {
         backgroundColor: Color(0xffF0F5F9),
         appBar:AppBar(
           elevation: 0,
-          leading:
-          Icon(Icons.all_inclusive, color:Colors.white, size: 30),
           centerTitle: true,
           title: Text(
             "Best Quotes",

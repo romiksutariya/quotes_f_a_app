@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scroll_snap_list/scroll_snap_list.dart';
+import 'package:quotes_app/spalsh_screen.dart';
 
 import 'main.dart';
 
@@ -38,7 +38,6 @@ class _HomescreenState extends State<Homescreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          leading: Icon(Icons.all_inclusive, color: Colors.white, size: 30),
           centerTitle: true,
           title: Text(
             "Best Quotes",
@@ -49,13 +48,13 @@ class _HomescreenState extends State<Homescreen> {
                 fontWeight: FontWeight.w500),
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.favorite_border, color: Colors.white, size: 25),
             ),
           ],
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color(0xff09203F),
@@ -70,7 +69,7 @@ class _HomescreenState extends State<Homescreen> {
             Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
             ),
             Container(
               height: 708,
@@ -79,12 +78,12 @@ class _HomescreenState extends State<Homescreen> {
                 itemBuilder: (context, index) =>
                     statusbox(color1[index], color2[index], statusTopic[index],routeName[index]),
                 itemCount: statusTopic.length,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
               ),
             ),
           ],
         ),
-        backgroundColor: Color(0xffF0F5F9),
+        backgroundColor: const Color(0xffF0F5F9),
       ),
     );
   }
@@ -94,7 +93,7 @@ class _HomescreenState extends State<Homescreen> {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '$rname');
+          Navigator.pushNamed(context, rname);
         },
         child: Container(
           height: 100,
@@ -111,16 +110,16 @@ class _HomescreenState extends State<Homescreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "$topic",
+                topic,
                 style: GoogleFonts.aBeeZee(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Icon(
+              const Icon(
                 Icons.emoji_emotions_outlined,
                 color: Colors.white,
                 size: 30,
